@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "../src",
+    "incremental": false,
+    "noEmit": true
+  },
+  "exclude": [],
+  "extends": "../tsconfig.json"
+}

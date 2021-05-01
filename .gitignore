@@ -1,0 +1,23 @@
+# build
+dist
+
+# NPM
+.npm_cache
+node_modules/
+npm-debug.log
+
+# yarn
+yarn-error.log
+
+# generated files
+coverage/
+reports/
+
+# logs
+*.log
+
+# other
+*.map
+.vscode/
+.idea/
+**/.DS_Store
