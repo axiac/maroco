@@ -1,6 +1,6 @@
 {
   "name": "@axiac.ro/maroco",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Jest Matchers for Routing Controllers",
   "keywords": [
     "express",
