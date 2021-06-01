@@ -9,7 +9,7 @@ Jest **MA**tchers for **RO**uting **CO**ntrollers is the testing companion of th
 
 ## Installing
 
-Install the package as usual, using your favorite Npm package manager, as a developer dependency (`devDependency`).
+Install the package using your favorite package manager, as a developer dependency (`devDependency`).
 
 
 <a name="howto-use"></a>
@@ -18,7 +18,8 @@ Install the package as usual, using your favorite Npm package manager, as a deve
 
 Using Maroco is as simple as _"one, two, three"_:
 
-1. Create in the tests directory a file that imports all the controller modules. It is named `all-controllers.ts` in the example below. Import this file into all use cases of the routes.
+1. Create in the tests directory a file that imports all the controller modules. Import this file into all use cases of the routes.<br>
+The file is named `all-controllers.ts` in the example below; feel free to use whatever name fits your project better.
 2. Use the [function `$route()`](#route) in use cases to identify the action that handles the described route.
 3. Use the [Jest matchers](#jest-matchers) described below on the value returned by `$route()`.
 
@@ -78,6 +79,8 @@ function $route(verb: string, route: string)
 
 ## The Jest matchers
 
+The following pseudo-code describes the Jest matchers provided by `maroco`, and the expected types of their arguments.
+
 ```typescript
 // General
 expect($route('get', '/foo/bar')).toBeHandled();
@@ -87,21 +90,21 @@ expect($route('post', '/foo/bar')).toAcceptJSON();
 expect($route('post', '/foo/bar')).toReturnJSON();
 
 // Parameters
-expect($route('get', '/foo/bar')).toUseRouteParameter(paramName);
+expect($route('get', '/foo/bar')).toUseRouteParameter(paramName);     // string
 expect($route('get', '/foo/bar')).toUseAllRouteParameters();
-expect($route('get', '/foo/bar')).toUseQueryParameter(paramName);
+expect($route('get', '/foo/bar')).toUseQueryParameter(paramName);     // string
 expect($route('get', '/foo/bar')).toUseAllQueryParameters();
-expect($route('get', '/foo/bar')).toUseBodyParameter(paramName);
+expect($route('get', '/foo/bar')).toUseBodyParameter(paramName);      // string
 expect($route('post', '/foo/bar')).toUseRequestBody();
-expect($route('get', '/foo/bar')).toUseRequestHeader(headerName);
+expect($route('get', '/foo/bar')).toUseRequestHeader(headerName);     // string
 expect($route('get', '/foo/bar')).toUseAllRequestHeaders();
-expect($route('get', '/foo/bar')).toUseRequestCookie(cookieName);
+expect($route('get', '/foo/bar')).toUseRequestCookie(cookieName);     // string
 expect($route('get', '/foo/bar')).toUseAllRequestCookies();
-expect($route('get', '/foo/bar')).toUseSessionProperty(propertyName);
+expect($route('get', '/foo/bar')).toUseSessionProperty(propertyName); // string
 expect($route('get', '/foo/bar')).toUseSession();
 expect($route('get', '/foo/bar')).toUseContext();
 expect($route('get', '/foo/bar')).toUseCurrentUser();
-expect($route('get', '/foo/bar')).toUseUploadedFile(fileName);
+expect($route('get', '/foo/bar')).toUseUploadedFile(fileName);        // string
 expect($route('get', '/foo/bar')).toUseAllUploadedFiles();
 
 // Response headers
@@ -112,9 +115,9 @@ expect($route('post', '/foo/bar')).toAnswerWith202Accepted();
 expect($route('post', '/foo/bar')).toAnswerWith204NoContent();
 expect($route('post', '/foo/bar')).toAnswerWith301MovedPermanently();
 expect($route('post', '/foo/bar')).toAnswerWith302Found()
-expect($route('post', '/foo/bar')).toAnswerWith(statusCode)
-expect($route('post', '/foo/bar')).toReturnContentType(contentType);
-expect($route('post', '/foo/bar')).toSetLocation(location);
-expect($route('post', '/foo/bar')).toRedirect(url);
-expect($route('post', '/foo/bar')).toSetHeader(header, value);
+expect($route('post', '/foo/bar')).toAnswerWith(statusCode)           // number
+expect($route('post', '/foo/bar')).toReturnContentType(contentType);  // string
+expect($route('post', '/foo/bar')).toSetLocation(location);           // string
+expect($route('post', '/foo/bar')).toRedirect(url);                   // string
+expect($route('post', '/foo/bar')).toSetHeader(header, value?);       // string, string (optional)
 ```

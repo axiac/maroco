@@ -1,6 +1,6 @@
 import {
   Body, BodyParam, CookieParam, CookieParams, Get, HeaderParam, HttpCode,
-  JsonController, Method, Param, Params, Post, Put, QueryParam, UploadedFile
+  JsonController, Method, Param, Params, Patch, Post, Put, QueryParam, UploadedFile
 } from 'routing-controllers';
 
 @JsonController('/hello-world')
@@ -39,5 +39,10 @@ export class HelloWorldController {
     @UploadedFile('file1') _3: Express.Multer.File
   ): Promise<object> {
     return person;
+  }
+
+  @Patch()
+  public empty(): undefined {
+    return;
   }
 }

@@ -28,7 +28,7 @@ export function $route(verb: string, route: string): Route {
     const controller: ControllerMetadataArgs = storage.controllers.find((ctrl: ControllerMetadataArgs) => ctrl.target === action.target);
 
     // Compute the route from controller path fragment and action path fragment...
-    const fullRoute: string | RegExp = ActionMetadata.appendBaseRoute(controller.route, action.route);
+    const fullRoute: string | RegExp = ActionMetadata.appendBaseRoute(controller.route ?? '', action.route ?? '');
     // ... and compare it against the route provided as argument
     let match: boolean;
     if (typeof fullRoute === 'string') {

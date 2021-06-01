@@ -55,7 +55,7 @@ function toUseJSON(
       `Hint: decorate the class ${className} with ${expectedDesc}.`;
   } else {
     // Never matches
-    pass = this.isNot;
+    pass = false;
     hint = this.utils.BOLD_WEIGHT('Attention: ') + this.utils.RECEIVED_COLOR('This route is not handled by any controller!');
   }
 

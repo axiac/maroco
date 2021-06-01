@@ -41,7 +41,7 @@ describe('toAnswerWith302Found()', () => {
 
 describe('toAnswerWith()', () => {
   it('matches when the returned status code is the value provided as argument', () => {
-    expect($route('POST', '/hello-world/:name')).toAnswerWith(204);
+    expect($route('post', '/hello-world/:name')).toAnswerWith(204);
   });
 
   it('does not match when the action is not decorated to produce a certain status code', () => {

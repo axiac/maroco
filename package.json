@@ -2,8 +2,17 @@
   "name": "@axiac.ro/maroco",
   "version": "1.0.0",
   "description": "Jest Matchers for Routing Controllers",
+  "keywords": [
+    "express",
+    "jest",
+    "koa",
+    "matcher",
+    "routing",
+    "routing-controllers",
+    "testing"
+  ],
   "license": "MIT",
-  "author": "Valentin VĂLCIU (aka axiac)",
+  "author": "Valentin VĂLCIU, aka axiac",
   "homepage": "https://github.com/axiac/maroco#readme",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -28,7 +37,7 @@
     "node": ">= 10"
   },
   "dependencies": {
-    "routing-controllers": "~0.9.0"
+    "routing-controllers": "^0.9.0"
   },
   "devDependencies": {
     "@types/jest": "~26.0.23",
@@ -48,7 +57,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/axiac/maroco.git"
+    "url": "https://github.com/axiac/maroco.git"
   },
   "bugs": {
     "url": "https://github.com/axiac/maroco/issues"

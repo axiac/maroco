@@ -11,6 +11,10 @@ describe('toAcceptJSON()', () => {
   it('does not match when the action does not accept JSON body', () => {
     expect($route('post', '/foo/bar')).not.toAcceptJSON();
   });
+
+  it('does not match when the route is not handled', () => {
+    expect($route('get', '/foo/bar')).not.toAcceptJSON();
+  });
 });
 
 describe('toReturnJSON()', () => {
@@ -18,7 +22,11 @@ describe('toReturnJSON()', () => {
     expect($route('post', '/hello-world/:name')).toReturnJSON();
   });
 
-  it('does not matche when the action does not return a JSON body', () => {
+  it('does not match when the action does not return a JSON body', () => {
     expect($route('post', '/foo/bar')).not.toReturnJSON();
+  });
+
+  it('does not match when the route is not handled', () => {
+    expect($route('get', '/foo/bar')).not.toReturnJSON();
   });
 });
