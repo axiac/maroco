@@ -1,6 +1,6 @@
 {
   "name": "@axiac.ro/maroco",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Jest Matchers for Routing Controllers",
   "license": "MIT",
   "author": "Valentin VĂLCIU (aka axiac)",
